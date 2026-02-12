@@ -86,7 +86,7 @@ public class Main {
                 break;
             }
 		} while (true);
-		return value;
+        return value;
 	}
 	
 	static int readCompoundingChoice(Scanner sc) {

@@ -153,7 +153,6 @@ public class Main {
 			System.out.print("\nWould you like to run another simulation (Y/N):");
 			response = sc.nextLine().trim();
 		} while (!response.equalsIgnoreCase("Y") && !response.equalsIgnoreCase("N"));
-		
 		if (response.equalsIgnoreCase("Y")) {
 			return true;
 		}

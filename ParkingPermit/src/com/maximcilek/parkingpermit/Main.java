@@ -9,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("\n=====================================================================");
-		System.out.println("\nWelcome to the Retirement Investment Calculator!\n");
+		System.out.println("\nWelcome to the Parking Permit Application!\n");
 		System.out.println("=====================================================================\n");
 		Scanner scanner = new Scanner(System.in);
 

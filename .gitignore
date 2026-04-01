@@ -2,3 +2,5 @@
 bin/
 .project
 .settings/
+__pycache__/
+*.py[cod]

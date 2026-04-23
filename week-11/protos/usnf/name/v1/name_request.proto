@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package draftkings.sport.v1;
+
+import "draftkings/sport/v1/sport.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+
+option go_package = "github.com/maxssportsanalysis/go-genproto/draftkings/sport/v1;sportpb";
+option java_multiple_files = true;
+option java_outer_classname = "DraftkingsSportsbookSportRequestProto";
+option java_package = "com.maxssportsanalysis.protobuf.draftkings.sport.v1";
+
+// Request message for GetDraftkingsSportsbookSport method.
+message GetDraftkingsSportsbookSportRequest {
+  // Format /sports/{sport}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {type: "grpc.maxs-sports-analysis.com/DraftkingsSportsbookSport"}
+  ];
+}
+
+message ListDraftkingsSportsbookSportsRequest {
+  uint32 page_size = 1;
+  string page_token = 2;
+  string order_by = 3 [(google.api.field_behavior) = OPTIONAL];
+  string filter = 4 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Request message for CreateDraftkingsSportsbookSport method.
+message CreateDraftkingsSportsbookSportRequest {
+  string sport_id = 1 [(google.api.field_behavior) = REQUIRED];
+
+  DraftkingsSportsbookSportStaging sport = 2 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {type: "grpc.maxs-sports-analysis.com/DraftkingsSportsbookSport"}
+  ];
+}
+
+// Request message for DeleteDraftkingsSportsbookSport method.
+message DeleteDraftkingsSportsbookSportRequest {
+  // Format: sports/{sport}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {type: "grpc.maxs-sports-analysis.com/DraftkingsSportsbookSport"}
+  ];
+}

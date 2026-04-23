@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  sql:
+    init:
+      mode: always
+
+bootstrap:
+  parquet:
+    enabled: true
+    names-path: data/canonical/baby_names.parquet

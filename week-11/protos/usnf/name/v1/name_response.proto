@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package usnf.name.v1;
+
+option java_multiple_files = true;
+option java_outer_classname = "UsnfNameResponseProto";
+option java_package = "com.maximcilek.protobuf.usnf.name.v1";
+
+// Response returned by the API for a given name query
+message UsnfNameResponse {
+  string name = 1;
+  int32 estimated_age = 2;
+  int32 first_year = 3;
+  int32 most_popular_year = 4;
+  repeated int32 top_years = 5;
+}

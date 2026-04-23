@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package usnf.name.v1;
+
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "UsnfNameProto";
+option java_package = "com.maximcilek.protobuf.usnf.name.v1";
+
+message UsnfName {
+  option (google.api.resource) = {
+    type: "usnf.maximcilek.com/UsnfName"
+    pattern: "names/{name}"
+    singular: "name"
+    plural: "names"
+  };
+  uint32 year = 1 [(google.api.field_behavior) = REQUIRED];
+  string name = 2 [(google.api.field_behavior) = REQUIRED];
+  string sex = 3 [(google.api.field_behavior) = REQUIRED];
+  uint32 rank = 4;
+  uint32 count = 5;
+}

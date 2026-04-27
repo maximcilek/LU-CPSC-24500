@@ -1,0 +1,18 @@
+[Unit]
+Description=Step CA Runtime
+After=network-online.target step-ca-bootstrap.service
+Requires=step-ca-bootstrap.service
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=3
+
+# Create runtime secret dir (tmpfs via systemd, NOT host files)
+# RuntimeDirectory=step-ca
+# RuntimeDirectoryMode=0700
+
+ExecStart=/usr/local/bin/step-ca-runtime.sh
+
+[Install]
+WantedBy=multi-user.target

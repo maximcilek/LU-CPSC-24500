@@ -14,7 +14,7 @@
     <name>usnf-api</name>
 
     <properties>
-        <java.version>26</java.version>
+        <java.version>25</java.version>
         <protobuf.version>4.34.1</protobuf.version>
         <grpc.version>1.80.0</grpc.version>
     </properties>
@@ -37,7 +37,20 @@
 
     <build>
         <extensions></extensions>
-        <plugins></plugins>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>4.0.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
 </project>

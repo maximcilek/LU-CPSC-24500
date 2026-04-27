@@ -47,3 +47,6 @@ sudo lsof -i :3306
 sudo systemctl stop mysql
 sudo systemctl disable mysql
 sudo ss -tulpn | grep 3306
+
+
+containerd pause image: https://explore.ggcr.dev/?repo=registry.k8s.io%2Fkubernetes%2Fpause

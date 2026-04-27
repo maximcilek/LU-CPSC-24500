@@ -6,9 +6,11 @@ spring:
 
   sql:
     init:
+      platform: mysql
       mode: always
+      schema-locations: resources/schema.sql
 
 bootstrap:
-  parquet:
+  database:
     enabled: true
     names-path: data/canonical/baby_names.parquet

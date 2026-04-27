@@ -1,0 +1,19 @@
+[Unit]
+Description=CoreDNS Registry Controller
+After=network.target containerd.service etcd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bash /home/mcilek/Github/maximcilek/LU-CPSC-24500/week-11/infra/dns/registry/registry.sh
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=0
+
+EnvironmentFile=/home/mcilek/Github/maximcilek/LU-CPSC-24500/week-11/infra/config/platform.env
+
+# IMPORTANT: keep logs visible
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

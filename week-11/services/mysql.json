@@ -1,0 +1,7 @@
+{
+  "name": "mysql",
+  "image": "mysql:8",
+  "port": 3306,
+  "network": "prod-net",
+  "dns": "mysql.service.local"
+}

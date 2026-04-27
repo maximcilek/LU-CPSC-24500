@@ -1,0 +1,12 @@
+[Unit]
+Description=Step CA Bootstrap (one-time initialization)
+ConditionPathExists=!/var/lib/step-ca/config/ca.json
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/step-ca-bootstrap.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

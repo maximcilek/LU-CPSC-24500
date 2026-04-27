@@ -1,0 +1,17 @@
+.:53 {
+    errors
+    log
+    cache 30
+    reload
+    loadbalance
+    loop
+
+    etcd skydns.internal {
+        endpoint http://${ETCD_ADVERTISE_FQDN}:${ETCD_CLIENT_PORT}
+        path /skydns
+        fallthrough
+    }
+
+    # fallback to host DNS
+    forward . /etc/resolv.conf
+}
